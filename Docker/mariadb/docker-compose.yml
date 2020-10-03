@@ -1,0 +1,19 @@
+version: "2"
+services:
+  mariadb:
+    image: mariadb
+    restart: always
+    ports:
+      - 3306:3306
+    volumes:
+      - database:/var/lib/mysql/data
+    environment:
+      - MYSQL_DATABASE=dbname
+      - MYSQL_USER=joseph
+      - MYSQL_PASSWORD=dbname
+      - MYSQL_ROOT_PASSWORD=dbname
+volumes:
+    database:
+        external: false
+
+# https://hub.docker.com/_/mariadb/

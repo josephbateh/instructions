@@ -1,0 +1,20 @@
+version: "2"
+services:
+  mysql:
+    image: mysql
+    container_name: mysql
+    restart: always
+    ports:
+      - 3306:3306
+    volumes:
+      - database:/var/lib/mysql/data
+    environment:
+      - MYSQL_DATABASE=home
+      - MYSQL_USER=joseph
+      - MYSQL_PASSWORD=Pa55w0rd!
+      - MYSQL_ROOT_PASSWORD=Pa55w0rd!
+volumes:
+    database:
+        external: false
+
+# https://hub.docker.com/_/mysql

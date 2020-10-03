@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+  minecraft-bedrock-server:
+    image: itzg/minecraft-bedrock-server
+    container_name: minecraft
+    environment:
+      - EULA=TRUE
+      - SERVER_NAME=city
+      - LEVEL_NAME=city
+      - LEVEL_TYPE=default
+      - MAX_PLAYERS=5
+      - DIFFICULTY=easy
+      - WHITE_LIST=false
+      - GAMEMODE=survival
+      - VIEW_DISTANCE=20
+      - TEXTUREPACK_REQUIRED=false
+    ports:
+      - '19132:19132/udp'
+volumes:
+  storage:
+
+# https://hub.docker.com/r/itzg/minecraft-bedrock-server

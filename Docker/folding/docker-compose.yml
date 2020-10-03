@@ -1,0 +1,17 @@
+version: '3.3'
+services:
+  foldingathome:
+    image: linuxserver/foldingathome
+    container_name: foldingathome
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=USA/Eastern
+    ports:
+      - '7396:7396'
+    volumes:
+      - folding-volume:/config
+    restart: always
+volumes:
+  folding-volume:
+    external: false

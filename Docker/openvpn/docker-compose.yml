@@ -1,0 +1,17 @@
+version: "2"
+services:
+  openvpn:
+    cap_add:
+      - NET_ADMIN
+    image: kylemanna/openvpn:latest
+    container_name: openvpn
+    restart: always
+    ports:
+      - 1194:1194/udp
+    volumes:
+      - openvpn-volume:/etc/openvpn
+volumes:
+    openvpn-volume:
+        external: false
+        
+# https://hub.docker.com/r/kylemanna/openvpn/

@@ -1,0 +1,32 @@
+version: "2"
+services:
+  application:
+    image: nextcloud
+    ports:
+      - 8080:80
+    links:
+      - database
+    volumes:
+      - application:/var/www/html
+    restart: always
+  database:
+    image: mariadb
+    ports:
+      - 3306:3306
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
+    restart: always
+    volumes:
+      - database:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=nextcloud
+      - MYSQL_PASSWORD=nextcloud
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+volumes:
+    application:
+      external: false
+    database:
+      external: false
+
+# https://hub.docker.com/_/mysql
+# https://hub.docker.com/r/linuxserver/nextcloud/
