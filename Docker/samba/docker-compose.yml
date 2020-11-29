@@ -17,4 +17,4 @@ services:
     tmpfs:
       - /tmp
     volumes:
-      - /home/joseph/docker/samba/data:/mnt  
+      - /home/joseph/docker/samba/data:/mnt
