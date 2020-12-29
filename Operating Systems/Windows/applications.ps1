@@ -10,6 +10,7 @@ choco install git
 choco install goodsync
 choco install googlechrome
 choco install leagueoflegends
+choco install msiafterburner
 choco install rufus
 choco install steam
 choco install ueli
