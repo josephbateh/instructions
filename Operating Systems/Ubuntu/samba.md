@@ -8,17 +8,17 @@ sudo apt upgrade -y
 sudo apt install samba
 ```
 
+Create directory
+
+```
+mkdir samba
+```
+
 Create user
 
 ```
 sudo smbpasswd -a joseph
 sudo nano /etc/samba/smb.conf
-```
-
-Create directory
-
-```
-mkdir samba
 ```
 
 Add configuration
