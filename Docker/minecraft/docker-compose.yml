@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   minecraft-bedrock-server:
-    image: itzg/minecraft-bedrock-server
+    image: itzg/minecraft-bedrock-server:latest
     container_name: minecraft
     environment:
       - EULA=TRUE
@@ -16,7 +16,8 @@ services:
       - TEXTUREPACK_REQUIRED=false
     ports:
       - '19132:19132/udp'
-volumes:
-  storage:
+    volumes:
+      - /home/joseph/docker/minecraft/data:/data
+      
 
 # https://hub.docker.com/r/itzg/minecraft-bedrock-server
