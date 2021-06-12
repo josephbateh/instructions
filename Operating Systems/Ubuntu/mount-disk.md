@@ -1,9 +1,25 @@
 # Mount Disk
 
+Find disk
+
+```
+lsblk
+```
+
+```
+sudo apt install exfat-fuse exfat-utils
+```
+
 Format as ext4
 
 ```
-sudo mkfs.ext4 /dev/sda1
+sudo mkfs.ext4 -n LABEL /dev/sda1
+```
+
+Format as exfat
+
+```
+sudo mkfs.exfat -n LABEL /dev/sda1
 ```
 
 Create mount point and mount
