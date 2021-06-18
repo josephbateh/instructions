@@ -1,17 +1,15 @@
-#!/bin/bash -ex
+#!/bin/bash -x
 
 # Variables
 measurement=internet_speed
 baseUri=localhost:8086
-fileName=speedtest.csv
 downloadSpeed=0
 uploadSpeed=0
 
 # Execution
-rm -rf "${fileName}"
-speedtest --csv > "${fileName}"
-downloadSpeed=$(awk -F "\"*,\"*" '{print $8}' "${fileName}")
-uploadSpeed=$(awk -F "\"*,\"*" '{print $9}' "${fileName}")
+result=$(speedtest --csv)
+downloadSpeed=$(echo "${result}" | awk -F "\"*,\"*" '{print $8}')
+uploadSpeed=$(echo "${result}" | awk -F "\"*,\"*" '{print $9}')
 
 # Insert Metrics
 curl -s --location --request POST "${baseUri}/write?db=monitoring" \
