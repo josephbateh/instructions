@@ -7,7 +7,7 @@ downloadSpeed=0
 uploadSpeed=0
 
 # Execution
-result=$(speedtest --csv)
+result=$(speedtest --csv --server=6214)
 downloadSpeed=$(echo "${result}" | awk -F "\"*,\"*" '{print $8}')
 uploadSpeed=$(echo "${result}" | awk -F "\"*,\"*" '{print $9}')
 
