@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash -ex
 
 # Variables
 measurement=internet_speed
@@ -7,7 +7,7 @@ downloadSpeed=0
 uploadSpeed=0
 
 # Execution
-result=$(speedtest --csv --server=6214)
+result=$(/usr/bin/speedtest --csv)
 downloadSpeed=$(echo "${result}" | awk -F "\"*,\"*" '{print $8}')
 uploadSpeed=$(echo "${result}" | awk -F "\"*,\"*" '{print $9}')
 
