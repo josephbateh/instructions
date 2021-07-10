@@ -1,5 +1,11 @@
 # Mount Disk
 
+Clean up things
+
+```
+sudo fdisk /dev/sda
+```
+
 Find disk
 
 ```
@@ -50,5 +56,11 @@ sudo mount -a
 Change ownership
 
 ```
-sudo chown -R joseph storage
+sudo chown -R joseph:joseph storage
+```
+
+See mounted drives
+
+```
+lsblk -f
 ```
