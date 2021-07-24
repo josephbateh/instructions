@@ -1,5 +1,8 @@
 #!/bin/bash -ex
 
+export PATH=/value/of/path:$PATH
+. /path/to/.bashrc
+
 # Variables
 measurement=internet_speed
 baseUri=localhost:8086
