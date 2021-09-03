@@ -16,8 +16,8 @@ services:
         - 'AGENT_NAME=hydrogen'
         - 'DOCKER_IN_DOCKER=start'
     volumes:
-        - teamcity-agent:/data
-        - teamcity-agent:/opt
+        - teamcity-agent-hydrogen:/data
+        - teamcity-agent-hydrogen:/opt
     privileged: true
   agent-helium:
     image: jetbrains/teamcity-agent:2021.1.2-linux-sudo
@@ -27,8 +27,8 @@ services:
         - 'AGENT_NAME=helium'
         - 'DOCKER_IN_DOCKER=start'
     volumes:
-        - teamcity-agent:/data
-        - teamcity-agent:/opt
+        - teamcity-agent-helium:/data
+        - teamcity-agent-helium:/opt
     privileged: true
   agent-lithium:
     image: jetbrains/teamcity-agent:2021.1.2-linux-sudo
@@ -38,11 +38,15 @@ services:
         - 'AGENT_NAME=lithium'
         - 'DOCKER_IN_DOCKER=start'
     volumes:
-        - teamcity-agent:/data
-        - teamcity-agent:/opt
+        - teamcity-agent-lithium:/data
+        - teamcity-agent-lithium:/opt
     privileged: true
 volumes:
   teamcity-server:
     external: false
-  teamcity-agent:
+  teamcity-agent-hydrogen:
+    external: false
+  teamcity-agent-helium:
+    external: false
+  teamcity-agent-lithium:
     external: false
