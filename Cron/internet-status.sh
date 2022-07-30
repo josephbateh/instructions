@@ -22,7 +22,8 @@ if [[ $google != 0 && $wikipedia != 0 ]]; then
   successBool=false
   status=1
   echo "FAILED."
-  echo "Exit Code: ${google}"
+  echo "Google: ${google}"
+  echo "Wikipedia: ${wikipedia}"
 fi
 
 # Insert Metric
