@@ -14,7 +14,7 @@ services:
       - MYSQL_PASSWORD=Pa55w0rd!
       - MYSQL_ROOT_PASSWORD=Pa55w0rd!
 volumes:
-    database:
-        external: false
+  database:
+    external: false
 
 # https://hub.docker.com/_/mysql

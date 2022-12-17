@@ -8,7 +8,6 @@ bash -ex syncthing.sh
 
 ## Setup
 
-
 Execute:
 
 ```

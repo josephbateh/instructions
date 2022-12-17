@@ -1,4 +1,5 @@
 # MOUNT HARD DRIVE
+
 sudo apt-get install parted
 lsblk
 sudo parted /dev/sda mklabel gpt
@@ -13,6 +14,7 @@ sudo nano /etc/fstab
 sudo hdparm -S 60 /dev/sda
 
 ## Use one of the identifiers you found to reference the correct partition
+
 <!-- /dev/sda1 /mnt/data ext4 defaults 0 2 -->
 <!-- UUID=11e1d3c9-f582-5484-b1a7-93de564438a4 /mnt/data ext4 defaults 0 2 -->
 LABEL=data /mnt/data ext4 defaults 0 2

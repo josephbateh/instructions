@@ -19,6 +19,6 @@ services:
       - '19132:19132/udp'
     volumes:
       - /home/joseph/docker/minecraft/data:/data
-      
+
 
 # https://hub.docker.com/r/itzg/minecraft-bedrock-server

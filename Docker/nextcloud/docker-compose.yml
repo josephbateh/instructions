@@ -23,10 +23,10 @@ services:
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
 volumes:
-    application:
-      external: false
-    database:
-      external: false
+  application:
+    external: false
+  database:
+    external: false
 
 # https://hub.docker.com/_/mysql
 # https://hub.docker.com/r/linuxserver/nextcloud/

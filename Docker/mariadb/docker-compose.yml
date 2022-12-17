@@ -13,7 +13,7 @@ services:
       - MYSQL_PASSWORD=dbname
       - MYSQL_ROOT_PASSWORD=dbname
 volumes:
-    database:
-        external: false
+  database:
+    external: false
 
 # https://hub.docker.com/_/mariadb/

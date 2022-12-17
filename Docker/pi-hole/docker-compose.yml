@@ -13,8 +13,8 @@ services:
       TZ: 'America/Eastern'
       WEBPASSWORD: 'password' # TODO: Set password.
     volumes:
-       - '/home/joseph/docker/pihole/etc-pihole/:/etc/pihole/'
-       - '/home/joseph/docker/pihole/etc-dnsmasq.d/:/etc/dnsmasq.d/'
+      - '/home/joseph/docker/pihole/etc-pihole/:/etc/pihole/'
+      - '/home/joseph/docker/pihole/etc-dnsmasq.d/:/etc/dnsmasq.d/'
     dns:
       - 127.0.0.1
       - 1.1.1.2

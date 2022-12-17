@@ -65,4 +65,4 @@ services:
       - /mnt:/mnt:z # :z allows share to be used by multiple containers
 
 networks:
-    default:
+  default:

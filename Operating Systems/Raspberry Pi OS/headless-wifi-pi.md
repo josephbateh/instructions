@@ -1,6 +1,7 @@
 # Headless Wifi for Raspberry Pi
 
 ## Create
+
 wpa_supplicant.conf
 
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
@@ -14,4 +15,5 @@ network={
 }
 
 ## Create
+
 ssh
