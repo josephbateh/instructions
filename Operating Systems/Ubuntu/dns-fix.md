@@ -2,7 +2,8 @@
 
 ## Intent
 
-Allow an install of Ubuntu to run DNS related servers like PiHole. By default, Ubuntu has its own local DNS server listening on port 53. This disables that so other DNS servers can run on Ubuntu.
+Allow an install of Ubuntu to run DNS related servers like PiHole. By default, Ubuntu has its own local DNS server
+listening on port 53. This disables that so other DNS servers can run on Ubuntu.
 
 ## Steps
 
@@ -21,7 +22,8 @@ This will open up a configuration file that looks something like this:
 ...
 ```
 
-There should be no uncommented values (as of writing on 2022-12-17). To force Ubuntu to stop using its local DNS, add this line:
+There should be no uncommented values (as of writing on 2022-12-17). To force Ubuntu to stop using its local DNS, add
+this line:
 
 ```
 [Resolve]

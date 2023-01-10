@@ -11,6 +11,9 @@ nano ~/.duplicacy-web/settings.json
 ```
 
 Add:
+```json
 {
   "listening_address": "0.0.0.0:3875"
-} 
+}
+```
+ 
