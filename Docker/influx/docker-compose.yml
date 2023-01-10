@@ -9,5 +9,5 @@ services:
     volumes:
       - influxdb-storage:/var/lib/influxdb
 volumes:
-  influxdb-storage:
+  storage:
     external: false
