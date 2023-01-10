@@ -28,5 +28,5 @@ fi
 
 # Insert Metric
 curl -s --location --request POST "${baseUri}/write?db=monitoring" \
---header 'Content-Type: text/plain' \
---data-raw "${measurement},success=${successBool} value=${status}"
+  --header 'Content-Type: text/plain' \
+  --data-raw "${measurement},success=${successBool} value=${status}"
