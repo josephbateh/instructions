@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /Users/joseph/code/instructions || exit
+cd ~/Code/instructions || exit
 date=$(date +%Y-%m-%d)
 git checkout main
 git add .

@@ -15,7 +15,7 @@ sudo nano /etc/systemd/resolved.conf
 
 This will open up a configuration file that looks something like this:
 
-```
+```conf
 [Resolve]
 #DNS=
 #FallbackDNS=
@@ -25,7 +25,7 @@ This will open up a configuration file that looks something like this:
 There should be no uncommented values (as of writing on 2022-12-17). To force Ubuntu to stop using its local DNS, add
 this line:
 
-```
+```conf
 [Resolve]
 ...
 DNSStubListener=no
