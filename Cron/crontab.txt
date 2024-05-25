@@ -1,0 +1,14 @@
+# Stop Folding at 6 AM
+0 6 * * * /usr/bin/docker stop foldingathome
+
+# Start Folding at 11 PM
+0 23 * * * /usr/bin/docker stop foldingathome
+
+# Download The Daily at 3 AM daily.
+0 3 * * * /usr/local/bin/joe get podcasts 'https://feeds.simplecast.com/54nAGcIl' '/home/joseph/Samba/Podcasts/The Daily' --limit 60
+
+# Sync Podcasts Directory to Backblaze. Don't delete previous values. Hopefully they can remain indefinitely
+0 4 * * * /usr/bin/b2 sync --compare-versions size --incremental-mode --no-progress --threads 8 /home/joseph/Samba/Podcasts/ b2://bc008f6a-d137-4694-b71d-3e68107db464/Archive/Podcasts
+
+# Sync Music Directory
+0 2 * * * /usr/bin/b2 sync --compare-versions size --incremental-mode --no-progress --threads 8 /home/joseph/Samba/Music/ b2://bc008f6a-d137-4694-b71d-3e68107db464/Archive/Music
