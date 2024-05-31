@@ -13,5 +13,11 @@
 # Download The Daily at 3 AM daily.
 0 3 * * * /usr/local/bin/joe get podcasts 'https://feeds.simplecast.com/54nAGcIl' '/home/joseph/Samba/Podcasts/The Daily' --limit 60
 
+# Download Techlinked at 3:15 AM daily.
+15 3 * * * /usr/local/bin/joe get podcasts 'https://feeds.megaphone.fm/LMG6425578600' '/home/joseph/Samba/Podcasts/Techlinked'
+
+# Download GameLinked at 3:30 AM daily.
+30 3 * * * /usr/local/bin/joe get podcasts 'https://feeds.megaphone.fm/LMG1416424702' '/home/joseph/Samba/Podcasts/GameLinked'
+
 # Sync Podcasts Directory to Backblaze. Don't delete previous values. Hopefully they can remain indefinitely
 0 4 * * * /usr/bin/b2 sync --compare-versions size --incremental-mode --no-progress --threads 8 /home/joseph/Samba/Podcasts/ b2://bc008f6a-d137-4694-b71d-3e68107db464/Archive/Podcasts
