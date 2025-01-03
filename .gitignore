@@ -1,6 +1,8 @@
 .idea
 speedtest.csv
 .vscode
+.obsidian
+
 # Created by https://www.gitignore.io/api/code,macos,windows,jetbrains,visualstudio,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=code,macos,windows,jetbrains,visualstudio,visualstudiocode
 
