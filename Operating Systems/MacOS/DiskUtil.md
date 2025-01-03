@@ -1,11 +1,11 @@
-Secure Erase
+# Secure Erase
 
-```
+```shell
 diskutil secureErase 0 /dev/diskX
 ```
 
-Usage: diskutil secureErase freespace level MountPoint|DiskIdentifier|DeviceNode
-Securely erases either a whole disk or a volume's freespace.
+Usage: diskutil secureErase free space level MountPoint|DiskIdentifier|DeviceNode
+Securely erases either a whole disk or a volume's free space.
 Level should be one of the following:
 
 0 - Single-pass zeros.
