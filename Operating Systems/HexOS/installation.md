@@ -12,7 +12,7 @@ During your participation in the beta, we expect you to do the obvious:  use and
 
 ## Quickstart Guide
 
-For those that just want to get started, here’s the TLDR:
+For those that just want to get started, here's the TLDR:
 
 Download the ISO [here](https://downloads.hexos.com/TrueNAS-SCALE-24.10.0-HexOS.iso).
 Use a tool such as Balena Etcher or Rufus to image a USB flash device with the ISO. (Rufus has been problematic; stick with Balena Etcher)
