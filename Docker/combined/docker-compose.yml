@@ -1,0 +1,51 @@
+version: "3"
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:2024.07.0 # https://hub.docker.com/r/pihole/pihole/tags
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "67:67/udp"
+      - "80:80/tcp"
+      - "443:443/tcp"
+    environment:
+      TZ: 'America/Eastern'
+      # WEBPASSWORD: {{REPLACE_ME}}
+    volumes:
+      - '/home/joseph/Docker/pihole/etc-pihole/:/etc/pihole/'
+      - '/home/joseph/Docker/pihole/etc-dnsmasq.d/:/etc/dnsmasq.d/'
+    dns:
+      - 127.0.0.1
+      - 1.1.1.2
+    cap_add:
+      - NET_ADMIN
+    restart: unless-stopped
+  foldingathome:
+    image: linuxserver/foldingathome:8.3.18 # https://hub.docker.com/r/linuxserver/foldingathome/tags
+    container_name: foldingathome
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=USA/Eastern
+      # - ACCOUNT_TOKEN={{REPLACE_ME}}
+      - MACHINE_NAME=mark
+    ports:
+      - '7396:7396'
+    volumes:
+      - folding:/config
+    restart: unless-stopped
+  homeassistant:
+    container_name: homeassistant
+    image: homeassistant/home-assistant:2024.11
+    volumes:
+      - /home/joseph/Docker/homeassistant/config:/config # https://hub.docker.com/r/homeassistant/home-assistant/tags
+      - /etc/localtime:/etc/localtime:ro
+      - /run/dbus:/run/dbus:ro
+    restart: unless-stopped
+    ports:
+      - "8123:8123/tcp"
+      - "8123:8123/udp"
+volumes:
+  folding:
+    external: false
