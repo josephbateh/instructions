@@ -10,3 +10,4 @@
 - [ ] Add `ACCOUNT_TOKEN` for Folding@Home.
 - [ ] Install `docker-compose.yml` file.
 - [ ] Install [crontab](https://github.com/josephbateh/instructions) file.
+- [ ] Set up [Samba](https://github.com/josephbateh/instructions/blob/main/Operating%20Systems/Ubuntu/samba.md).
