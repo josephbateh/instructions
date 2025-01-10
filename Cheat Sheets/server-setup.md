@@ -3,6 +3,7 @@
 ## Checklist
 
 - [ ] Download PiHole config from server.
+- [ ] Download Home Assistant config from server.
 - [ ] Backup files from Samba share.
 - [ ] Create [Kubuntu](https://kubuntu.org/getkubuntu/) install.
 - [ ] Change DNS settings at router level.
