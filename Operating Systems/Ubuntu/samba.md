@@ -8,10 +8,11 @@ sudo apt upgrade -y
 sudo apt install samba -y
 ```
 
-Create directory
+Create directory and set permissions.
 
 ```sh
 mkdir ~/Shares
+chmod -R 755 ~/Shares
 ```
 
 Create user
