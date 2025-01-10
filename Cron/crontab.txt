@@ -5,17 +5,17 @@
 0 23 * * * /usr/bin/docker stop foldingathome
 
 # Sync Music Directory
-0 2 * * * /usr/bin/b2 sync --compare-versions size --incremental-mode --no-progress --threads 8 /home/joseph/Shares/Music/ b2://bc008f6a-d137-4694-b71d-3e68107db464/Archive/Music
+0 2 * * * /usr/bin/b2 sync --compare-versions size --incremental-mode --no-progress --threads 8 /home/joseph/Shares/Home/Music/ b2://bc008f6a-d137-4694-b71d-3e68107db464/Archive/Music
 
 # Sync Software Directory
-30 2 * * * /usr/bin/b2 sync --compare-versions size --incremental-mode --no-progress --threads 8 /home/joseph/Shares/Software/ b2://bc008f6a-d137-4694-b71d-3e68107db464/Archive/Software
+30 2 * * * /usr/bin/b2 sync --compare-versions size --incremental-mode --no-progress --threads 8 /home/joseph/Shares/Home/Software/ b2://bc008f6a-d137-4694-b71d-3e68107db464/Archive/Software
 
 # Download The Daily at 3 AM daily.
-0 3 * * * /usr/local/bin/joe get podcasts 'https://feeds.simplecast.com/54nAGcIl' '/home/joseph/Shares/Podcasts/The Daily' --limit 10
+0 3 * * * /usr/local/bin/joe get podcasts 'https://feeds.simplecast.com/54nAGcIl' '/home/joseph/Shares/Home/Podcasts/The Daily' --limit 10
 
 # Download Techlinked at 3:15 AM daily.
-15 3 * * * /usr/local/bin/joe get podcasts 'https://feeds.megaphone.fm/LMG6425578600' '/home/joseph/Shares/Podcasts/TechLinked' --limit 10
+15 3 * * * /usr/local/bin/joe get podcasts 'https://feeds.megaphone.fm/LMG6425578600' '/home/joseph/Shares/Home/Podcasts/TechLinked' --limit 10
 
 # Sync Podcasts Directory to Backblaze. Don't delete previous values. Hopefully they can remain indefinitely
-0 4 * * * /usr/bin/b2 sync --compare-versions size --incremental-mode --no-progress --threads 8 /home/joseph/Shares/Podcasts/ b2://bc008f6a-d137-4694-b71d-3e68107db464/Archive/Podcasts
+0 4 * * * /usr/bin/b2 sync --compare-versions size --incremental-mode --no-progress --threads 8 /home/joseph/Shares/Home/Podcasts/ b2://bc008f6a-d137-4694-b71d-3e68107db464/Archive/Podcasts
 

@@ -11,7 +11,7 @@ sudo apt install samba -y
 Create directory and set permissions.
 
 ```sh
-mkdir ~/Shares
+mkdir -p ~/Shares/Home
 chmod -R 755 ~/Shares
 ```
 
@@ -27,7 +27,7 @@ Add configuration
 ```conf
 [home]
     comment = homeboi
-    path = /home/joseph/Shares
+    path = /home/joseph/Shares/Home
     read only = no
     browsable = no
 ```
