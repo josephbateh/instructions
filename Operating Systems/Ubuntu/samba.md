@@ -5,13 +5,13 @@ Install Samba
 ```sh
 sudo apt update
 sudo apt upgrade -y
-sudo apt install samba
+sudo apt install samba -y
 ```
 
 Create directory
 
 ```sh
-mkdir samba
+mkdir ~/Shares
 ```
 
 Create user
@@ -26,7 +26,7 @@ Add configuration
 ```conf
 [home]
     comment = homeboi
-    path = /home/joseph/samba
+    path = /home/joseph/Shares
     read only = no
     browsable = no
 ```
