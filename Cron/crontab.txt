@@ -16,6 +16,12 @@
 # Download Techlinked at 3:15 AM daily.
 15 3 * * * /usr/local/bin/joe get podcasts 'https://feeds.megaphone.fm/LMG6425578600' '/home/joseph/Shares/Home/Podcasts/TechLinked' --limit 10
 
+# Download The Ezra Klein Show at 3:30 AM daily
+30 3 * * * /usr/local/bin/joe get podcasts 'https://feeds.simplecast.com/82FI35Px' '/home/joseph/Shares/Home/Podcasts/The Ezra Klein Show' --limit 10
+
+# Download The Clark Howard Show at 3:45 AM daily
+45 3 * * * /usr/local/bin/joe get podcasts 'https://feeds.megaphone.fm/LMG6425578600' '/home/joseph/Shares/Home/Podcasts/The Clark Howard Show' --limit 10
+
+
 # Sync Podcasts Directory to Backblaze. Don't delete previous values. Hopefully they can remain indefinitely
 0 4 * * * /usr/bin/b2 sync --compare-versions size --incremental-mode --no-progress --threads 8 /home/joseph/Shares/Home/Podcasts/ b2://bc008f6a-d137-4694-b71d-3e68107db464/Archive/Podcasts
-
