@@ -40,3 +40,12 @@ sudo systemctl disable systemd-resolved.service
 ```
 
 Next, restart the machine. Afterward, it should be possible to host DNS servers like PiHole on port 53.
+
+## Update
+
+As of March 16, 2025 this didn't work. The following commands fixed the issue:
+
+```sh
+sudo ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf
+sudo systemctl restart systemd-resolved
+```
