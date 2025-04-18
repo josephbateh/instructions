@@ -15,9 +15,6 @@ services:
     volumes:
       - '/home/joseph/docker/pihole/etc-pihole/:/etc/pihole/'
       - '/home/joseph/docker/pihole/etc-dnsmasq.d/:/etc/dnsmasq.d/'
-    dns:
-      - 127.0.0.1
-      - 1.1.1.2
     cap_add:
       - NET_ADMIN
     restart: always
