@@ -10,11 +10,11 @@ services:
       - "80:80/tcp"
       - "443:443/tcp"
     environment:
-      TZ: 'America/Eastern'
+      TZ: "America/Eastern"
       # WEBPASSWORD: {{REPLACE_ME}}
     volumes:
-      - '/home/joseph/Docker/pihole/etc-pihole/:/etc/pihole/'
-      - '/home/joseph/Docker/pihole/etc-dnsmasq.d/:/etc/dnsmasq.d/'
+      - "/home/joseph/Docker/pihole/etc-pihole/:/etc/pihole/"
+      - "/home/joseph/Docker/pihole/etc-dnsmasq.d/:/etc/dnsmasq.d/"
     dns:
       - 127.0.0.1
       - 1.1.1.2
@@ -31,7 +31,7 @@ services:
       # - ACCOUNT_TOKEN={{REPLACE_ME}}
       - MACHINE_NAME=mark
     ports:
-      - '7396:7396'
+      - "7396:7396"
     volumes:
       - folding:/config
     restart: unless-stopped

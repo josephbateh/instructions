@@ -1,4 +1,4 @@
-version: '3.4'
+version: "3.4"
 
 services:
   samba:
@@ -8,7 +8,6 @@ services:
     stdin_open: true
     tty: true
     environment:
-
       # timszone, ex: 'America/Toronto'
       TZ: "America/Toronto"
 

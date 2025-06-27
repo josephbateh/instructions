@@ -1,6 +1,7 @@
 # Kubernetes/Cloud Cheat Sheet
 
-Useful reference: [link](https://kubernetes.io/docs/reference/kubectl/cheatsheet).
+The official [Kubernetes cheat sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet) is the source for this
+guide.
 
 ## Cluster
 
@@ -112,4 +113,3 @@ kubectl logs podboi-5957558857-zsfsx -c containerboi --previous
 ```sh
 kubectl exec --stdin --tty podboi-7567cbcdc8-jk25f -c containerboi -- /bin/bash
 ```
-

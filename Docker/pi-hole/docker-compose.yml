@@ -10,11 +10,11 @@ services:
       - "80:80/tcp"
       - "443:443/tcp"
     environment:
-      TZ: 'America/Eastern'
-      WEBPASSWORD: 'password' # TODO: Set password.
+      TZ: "America/Eastern"
+      WEBPASSWORD: "password" # TODO: Set password.
     volumes:
-      - '/home/joseph/docker/pihole/etc-pihole/:/etc/pihole/'
-      - '/home/joseph/docker/pihole/etc-dnsmasq.d/:/etc/dnsmasq.d/'
+      - "/home/joseph/docker/pihole/etc-pihole/:/etc/pihole/"
+      - "/home/joseph/docker/pihole/etc-dnsmasq.d/:/etc/dnsmasq.d/"
     cap_add:
       - NET_ADMIN
     restart: always

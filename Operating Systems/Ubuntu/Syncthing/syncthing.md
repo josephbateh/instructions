@@ -10,13 +10,13 @@ bash -ex syncthing.sh
 
 Execute:
 
-```
+```bash
 sudo nano /etc/systemd/system/syncthing.service
 ```
 
 Paste:
 
-```
+```ini
 [Unit]
 Description=Syncthing
 
@@ -33,7 +33,7 @@ WantedBy=multi-user.target
 
 Execute:
 
-```
+```bash
 sudo systemctl daemon-reload
 sudo systemctl enable syncthing
 sudo service syncthing start

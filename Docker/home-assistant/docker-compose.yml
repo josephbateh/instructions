@@ -1,13 +1,13 @@
-version: '3.3'
+version: "3.3"
 services:
   home-assistant:
-    image: 'homeassistant/home-assistant:2021.8'
+    image: "homeassistant/home-assistant:2021.8"
     container_name: homeassistant
     privileged: true
     restart: unless-stopped
     # network_mode: host
     ports:
-      - '8123:8123'
+      - "8123:8123"
     environment:
       - TZ=USA/Eastern
     volumes:

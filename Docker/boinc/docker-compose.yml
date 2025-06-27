@@ -14,5 +14,4 @@ services:
 volumes:
   boinc-volume:
     external: false
-
 # https://hub.docker.com/r/boinc/client/

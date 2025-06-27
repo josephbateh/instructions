@@ -2,13 +2,13 @@
 
 ## Install Nextcloud
 
-```
+```bash
 sudo snap install nextcloud
 ```
 
 ## Lets Encrypt Certificate
 
-```
+```bash
 sudo ufw allow 80,443/tcp
 sudo nextcloud.enable-https lets-encrypt
 ```

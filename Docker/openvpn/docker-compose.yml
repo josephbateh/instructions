@@ -13,5 +13,4 @@ services:
 volumes:
   openvpn-volume:
     external: false
-
 # https://hub.docker.com/r/kylemanna/openvpn/

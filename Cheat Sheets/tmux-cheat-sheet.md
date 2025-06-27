@@ -1,6 +1,6 @@
 # TMUX Cheat Sheet
 
-### Start Session
+## Start Session
 
 Start a session
 
@@ -20,7 +20,7 @@ Rename an existing session
 tmux rename-session -t {{session}} database
 ```
 
-### Split Panes
+## Split Panes
 
 Split left and right:
 
@@ -34,25 +34,25 @@ Split top and bottom:
 CTRL + b, "
 ```
 
-### Navigating Panes
+## Navigating Panes
 
 ```shell
 CTRL + b, {{arrow-key}}
 ```
 
-### Closing Panes
+## Closing Panes
 
 ```shell
 CTRL + d
 ```
 
-### Creating New Windows
+## Creating New Windows
 
 ```shell
 CTRL + b, c
 ```
 
-### Switching Windows
+## Switching Windows
 
 Previous window
 
@@ -72,13 +72,13 @@ Numbered window
 CTRL + b, {{number}}
 ```
 
-### Renaming Windows
+## Renaming Windows
 
 ```shell
 CTRL + b, ,
 ```
 
-### Detach Session
+## Detach Session
 
 Detach all
 
@@ -92,7 +92,7 @@ Detach specific sessions
 CTRL + b, D
 ```
 
-### Attach Session
+## Attach Session
 
 ```shell
 tmux ls
@@ -103,4 +103,3 @@ Figure out session
 ```shell
 tmux attach -t {{session}}
 ```
-

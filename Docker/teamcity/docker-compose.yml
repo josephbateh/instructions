@@ -1,4 +1,4 @@
-version: '3.3'
+version: "3.3"
 services:
   teamcity-server:
     image: jetbrains/teamcity-server:2021.1.2
@@ -7,14 +7,14 @@ services:
       - teamcity-server:/data/teamcity_server/datadir'
       - teamcity-server:/opt/teamcity/logs'
     ports:
-      - '8111:8111'
+      - "8111:8111"
   agent-hydrogen:
     image: jetbrains/teamcity-agent:2021.1.2-linux-sudo
     container_name: agent-hydrogen
     environment:
-      - 'SERVER_URL=teamcity-server:8111'
-      - 'AGENT_NAME=hydrogen'
-      - 'DOCKER_IN_DOCKER=start'
+      - "SERVER_URL=teamcity-server:8111"
+      - "AGENT_NAME=hydrogen"
+      - "DOCKER_IN_DOCKER=start"
     volumes:
       - teamcity-agent-hydrogen:/data
       - teamcity-agent-hydrogen:/opt
@@ -23,9 +23,9 @@ services:
     image: jetbrains/teamcity-agent:2021.1.2-linux-sudo
     container_name: agent-helium
     environment:
-      - 'SERVER_URL=teamcity-server:8111'
-      - 'AGENT_NAME=helium'
-      - 'DOCKER_IN_DOCKER=start'
+      - "SERVER_URL=teamcity-server:8111"
+      - "AGENT_NAME=helium"
+      - "DOCKER_IN_DOCKER=start"
     volumes:
       - teamcity-agent-helium:/data
       - teamcity-agent-helium:/opt
@@ -34,9 +34,9 @@ services:
     image: jetbrains/teamcity-agent:2021.1.2-linux-sudo
     container_name: agent-lithium
     environment:
-      - 'SERVER_URL=teamcity-server:8111'
-      - 'AGENT_NAME=lithium'
-      - 'DOCKER_IN_DOCKER=start'
+      - "SERVER_URL=teamcity-server:8111"
+      - "AGENT_NAME=lithium"
+      - "DOCKER_IN_DOCKER=start"
     volumes:
       - teamcity-agent-lithium:/data
       - teamcity-agent-lithium:/opt

@@ -16,5 +16,4 @@ services:
 volumes:
   database:
     external: false
-
 # https://hub.docker.com/_/mysql

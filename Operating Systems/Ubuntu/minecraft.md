@@ -19,11 +19,11 @@ sudo apt-get -y install default-jdk
 
 Install Git
 
-```
+```bash
 sudo apt-get install git
 ```
 
-**Login to minecraft user**
+### Login to Minecraft User
 
 ## New World
 
@@ -40,14 +40,14 @@ nano eula.txt
 
 Enter directory, clone repo
 
-```
+```bash
 cd /home/minecraft
 git clone https://github.com/JosephBateh/world.git
 ```
 
 Check if it runs correctly.
 
-```
+```bash
 cd world/
 git checkout Neon
 java -jar /home/minecraft/world/spigot-1.9.4.jar nogui
@@ -56,13 +56,13 @@ op WorldEdit
 
 ## Create a new system service
 
-```sh
+```bash
 sudo nano /etc/systemd/system/minecraft-server.service
 ```
 
 Copy and paste the following, replacing brackets with your information
 
-```
+```ini
 [Unit]
 Description=<Server Name>
 
@@ -80,20 +80,20 @@ WantedBy=multi-user.target
 
 Reload services
 
-```
+```bash
 sudo systemctl daemon-reload
 sudo systemctl enable minecraft-server
 ```
 
 To run the service manually
 
-```
+```bash
 sudo service minecraft-server start
 ```
 
 To check the status
 
-```
+```bash
 sudo systemctl status minecraft-server.service
 ```
 
@@ -101,13 +101,13 @@ sudo systemctl status minecraft-server.service
 
 To accept EULA
 
-```sh
+```bash
 sudo nano eula.txt
 ```
 
 To use different build tools
 
-```sh
+```bash
 wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
 wget http://www.mediafire.com/download/6h09558h3ekzyd3/spigot-x.y.z.jar
 ```
