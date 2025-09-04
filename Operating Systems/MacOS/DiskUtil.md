@@ -1,4 +1,20 @@
-# Secure Erase
+# DiskUtil
+
+## Normal Erase
+
+To format an external drive as ExFAT, run the following to find the drive:
+
+```shell
+diskutil list
+```
+
+Once you've found the drive name, run the following to format:
+
+```shell
+diskutil eraseDisk ExFAT DriveName /dev/diskX
+```
+
+## Secure Erase
 
 ```shell
 diskutil secureErase 0 /dev/diskX
