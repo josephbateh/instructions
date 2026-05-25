@@ -1,0 +1,55 @@
+version: "3.8"
+services:
+  jellyfin:
+    container_name: jellyfin
+    image: lscr.io/linuxserver/jellyfin:latest
+    environment:
+      - PUID=${PUID:-1000}
+      - PGID=${PGID:-1000}
+      - TZ=${TZ:-America/New_York}
+      - JELLYFIN_PublishedServerUrl=${PUBLISHED_SERVER_URL:-}
+    volumes:
+      - ${CONFIG_LOCATION}:/config
+      - ${CACHE_LOCATION}:/cache
+      - ${MEDIA_LOCATION}:/media
+    ports:
+      - "8096:8096" # HTTP web UI
+      - "8920:8920" # HTTPS web UI (only if you enable TLS in Jellyfin)
+      - "7359:7359/udp" # Client auto-discovery
+      - "1900:1900/udp" # DLNA
+    # Intel iGPU passthrough for Quick Sync (QSV) / VA-API hardware transcoding.
+    # See README "Hardware acceleration" section for how to find RENDER_GID on the host.
+    devices:
+      - /dev/dri:/dev/dri
+    group_add:
+      - "${RENDER_GID:-989}"
+    labels:
+      # Used by the config-backup sidecar to briefly stop this container
+      # during the nightly snapshot so the SQLite database is quiesced.
+      - "docker-volume-backup.stop-during-backup=jellyfin-backup"
+    restart: always
+
+  # Automated daily snapshots of Jellyfin's config directory (users, library
+  # metadata, watch history, plugins, settings). The /cache directory is
+  # excluded because Jellyfin regenerates it on demand. Media files are not
+  # backed up here — assume they are originals stored/backed up elsewhere.
+  config-backup:
+    container_name: jellyfin_config_backup
+    image: offen/docker-volume-backup:v2
+    restart: always
+    environment:
+      BACKUP_CRON_EXPRESSION: "0 3 * * *"
+      BACKUP_FILENAME: "jellyfin-config-%Y-%m-%dT%H-%M-%S.tar.gz"
+      BACKUP_RETENTION_DAYS: "30"
+      BACKUP_PRUNING_LEEWAY: "1m"
+      # Stop Jellyfin briefly during the snapshot so the SQLite database is
+      # quiesced and the tarball is internally consistent.
+      BACKUP_STOP_CONTAINER_LABEL: "jellyfin-backup"
+    volumes:
+      - ${CONFIG_LOCATION}:/backup/config:ro
+      - ${BACKUP_LOCATION}:/archive
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+# Docs: https://jellyfin.org/docs/general/installation/container/
+# Linuxserver image: https://docs.linuxserver.io/images/docker-jellyfin/
+# Volume backup image: https://github.com/offen/docker-volume-backup
