@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # Update
-sudo apt -y update
+sudo apt update
 sudo apt -y upgrade
+sudo apt -y install ssh net-tools
 
 # Install Docker
 sudo apt install -y unattended-upgrades
