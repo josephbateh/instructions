@@ -30,6 +30,13 @@ Add configuration
     path = /home/joseph/Shares/Home
     read only = no
     browsable = no
+    # MacOS Compatibility
+    vfs objects = fruit streams_xattr
+    fruit:metadata = stream
+    fruit:model = MacSamba
+    fruit:veto_appledouble = no
+    fruit:posix_rename = yes
+
 ```
 
 Restart Samba service
