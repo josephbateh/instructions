@@ -14,6 +14,12 @@ Once you've found the drive name, run the following to format:
 diskutil eraseDisk ExFAT DriveName /dev/diskX
 ```
 
+Example, formatting a drive as APFS:
+
+```shell
+diskutil eraseDisk APFS Backup /dev/disk26
+```
+
 ## Secure Erase
 
 ```shell
